@@ -1,0 +1,73 @@
+.popup {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40%;
+    max-width: 400px;
+    height: auto;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 10px 10px 5px 5px rgb(82, 214, 82);
+    border-radius: 10px;
+  }
+  
+  .popup-inner {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .mpesa {
+    width: 100%;
+    background-color: green;
+    margin-bottom: 10px;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .mpesa h3 {
+    text-align: center;
+    color: white;
+    margin: 0;
+    padding: 10px 0;
+  }
+  
+  .input-container {
+    margin-bottom: 15px;
+  }
+  
+  .input-container label {
+    display: block;
+    margin-bottom: 5px;
+  }
+  
+  .input-container input {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    text-align: center;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .input-container input:focus {
+    border-color: green;
+    box-shadow: 0 0 5px rgb(82, 214, 82);
+    outline: none;
+  }
+  
+  #send,
+  #Cancel {
+    padding: 10px 20px;
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin: 5px;
+    cursor: pointer;
+  }
+  

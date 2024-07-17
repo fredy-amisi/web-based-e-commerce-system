@@ -1,0 +1,1970 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+  }
+  #scrollToTopBtn {
+    z-index: 50;
+    width: 3%;
+    height: 7%;
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: rgb(1, 1, 90);
+    color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    cursor: pointer;
+    animation: bounce 2s infinite;
+  }
+  /* Add this to your CSS file */
+.cart {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+}
+.cart_icon{
+  width: 70px;
+  height: 20px;
+}
+.cart-count {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  background: red;
+  color: white;
+  border-radius: 50%;
+  padding: 2px 6px;
+  font-size: 12px;
+}
+
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-20px);
+    }
+    60% {
+      transform: translateY(-10px);
+    }
+  }
+  
+  header{
+    width: 100%;
+    height: 10vh;
+  background: linear-gradient(to right, rgb(1, 90, 1), rgba(255, 136, 0, 0.966));
+    
+  }
+  nav{
+  
+    
+  
+  }
+  nav ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 3% auto;
+  
+  }
+  nav ul li{
+    width: 6%;
+  }
+  nav ul li span{
+  
+    color: white;
+    font-size: 80%;
+  
+  
+  }
+  Link{
+  
+  
+  }
+  .dropdown{
+    position: relative;
+  }
+  .dropdown span{
+    color: white;
+    font-weight: 650;
+  }
+  .dropdown-content{
+      display: none;
+  }
+  .dropdown:hover .dropdown-content { /* Show dropdown content on hover */
+    display: block;
+  }
+  .dropdown-content {
+    position: absolute; 
+    background-color: #f1f1f1; 
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); 
+    z-index: 1; 
+    border-radius: 4px;
+    width: auto;
+    font-size: 13px;
+  }
+  
+  
+  
+  @media only screen and (max-width: 480px){
+    
+    header{
+      width: 100%;
+      height: 18vh;
+      background-color: rgb(1, 1, 90);
+    
+      
+      
+    }
+    nav ul{
+      width: 70%;
+        display: flex;
+      flex-direction: row;
+      color: snow;
+      justify-content: space-around;
+      padding-top: 40px;
+      text-decoration: none;
+      margin: 0 auto;
+    
+    
+    
+    }
+    nav ul li{
+        width: auto;
+    
+    }
+    
+    nav ul li a{
+        text-decoration: none;
+      color: snow;
+    
+    }
+    
+    
+    
+    
+    .menu-icon {
+      display: block;
+      cursor: pointer;
+    }
+    
+    .bar1, .bar2, .bar3 {
+      width: 25px;
+      height: 3px;
+      background-color: snow;
+      transition: 0.4s;
+      margin: 6px 20px;
+    }
+    
+    .change.bar1 {
+      transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .change.bar2 {
+      opacity: 0;
+    }
+    
+    .change.bar3 {
+      transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
+    /* Hide nav links initially */
+    .nav-links {
+      display: none;
+      list-style: none;
+      padding: 0;
+    }
+    header{
+      width: 100%;
+      height: 50px;
+    }
+    
+    /* Show nav links when the menu is open */
+    .nav-links.show {
+      display: flex;
+      flex-direction: column;
+      background-color: rgb(1, 1, 90);
+      position: absolute;
+      top: 60px;
+      left: 0;
+      width: 50%;
+      z-index: 50;
+      font-size:10px;
+      border: 1px solid white;
+      justify-content: center;
+    
+    
+    }
+    
+    .nav-links li {
+      width: 100%;
+      padding: 5px;
+      border-bottom: 1px solid snow;
+    
+    }
+    
+  
+  }
+ 
+
+  
+  
+   @media only screen and (max-width: 550px) and (min-width: 481px){
+    header{
+     display: flex;
+     align-items: center;
+    }
+    nav{
+      flex: 1;
+    }
+    .nav-links{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+    .nav-links li{
+      margin: 0 2.5%;
+
+    }
+    .nav-links li a{
+      text-decoration: none;
+
+    }
+   .dropdown span{
+    margin-left: 18.5%;
+    color: whitesmoke;
+   }
+   }
+   @media only screen and (min-width:551px) and  (max-width: 650px){
+    header{
+      display: flex;
+     align-items: center;
+
+    }
+    nav{
+      flex: 1;
+    }
+    .nav-links{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+    .nav-links li{
+      margin: 0 2.5%;
+
+    }
+    .nav-links li a{
+      text-decoration: none;
+
+    }
+    .dropdown span{
+      margin-left: 18.5%;
+      color: whitesmoke;
+     }
+   }
+   @media only screen and (min-width:651px) and (max-width:700px){
+    header{
+      display: flex;
+      align-items: center;
+
+    }
+ 
+    .nav-links{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+    }
+    .nav-links li{
+      margin: 0 10px;
+    }
+    .nav-links li a{
+      text-decoration: none;
+
+    }
+    .dropdown span{
+      margin-left: 18.5%;
+      color: whitesmoke;
+     }
+   }
+   @media only screen and (min-width:701px) and (max-width:850px){
+    header{
+      display: flex;
+      align-items: center;
+    }
+    nav{
+      flex: 0.5;
+    }
+    .nav-links{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-left: 20%;
+
+    }
+    .nav-links li{
+      margin: 0 12px;
+    }
+    .dropdown span{
+     padding: 12px;
+     }
+   }
+   @media only screen and (min-width:851px){
+    header{
+      display: flex;
+      align-items: center;
+      background-color: rgb(1, 90, 1);
+   } 
+   nav{
+    flex: 1;
+   }
+   .nav-links li{
+    margin: 0 12px;
+
+   }
+   .nav-links li a{
+    text-decoration: none;
+
+  }
+  .dropdown span{
+    padding: 12px;
+    }
+  }
+
+  .cart{
+    display: flex;
+  color: green;
+  margin-right: 20%;
+  }
+
+
+
+
+  .banner_main{
+    width: 100%;
+    height: 500px;
+    background-color: whitesmoke;
+    overflow: hidden;
+    position: relative;
+  
+  }
+  .custom-slider{
+    width: 100%;
+  
+  
+  }
+  .carousel-item1{
+    background-image: url(../Images/a1.jfif);
+    width: 100%;
+    height: 460px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .carousel-item2{
+    background-image: url(../Images/a1.jfif);
+    width: 100%;
+    height: 460px;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .slide-content{
+   
+    color: black;
+  }
+  
+  .slide-content h2{
+    font-size: 60;
+    color: black;
+
+  }
+  .slide-content p{
+    margin-top: 20px;
+    font-size: 20px;
+    color: black;
+    font-weight: 900;
+
+  }
+  .welcome{
+    width: 80vh;
+    height: 25px;
+    background-color: rgba(156, 104, 7, 0.651);
+    text-align: center;
+    border-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+  
+  .g-button{
+    background-color: rgb(1, 1, 90);
+    color: #fff;
+    padding: 15px 30px;
+    border: 1px solid blue;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin: 20px;
+  }
+  .l-button{
+    background-color: rgb(1, 1, 90);
+    color: #fff;
+    padding: 15px 30px;
+    border: 1px solid blue;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin: 20px;
+  }
+  
+  @media only screen and (max-width: 480px){
+    .banner_main{
+      width: 100%;
+      height: 525px;
+      background-color: whitesmoke;
+      overflow: hidden;
+      position: relative;
+    
+    }
+    .custom-slider{
+      width: 100%;
+      height: 500px;
+    
+    }
+    .carousel-item1{
+      background-image: url(../Images/a1.jfif);
+      width: 100%;
+      height: 460px;
+      background-repeat: no-repeat;
+      background-size: cover;
+      
+    }
+    .carousel-item2{
+      background-image: url(../Images/a1.jfif);
+      width: 100%;
+      height: 460px;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+    }
+    .slide-content{
+   
+      color: whitesmoke;
+    }
+    
+    .slide-content h2{
+      font-size: 30px;
+      margin-top: 8%;
+    }
+    .slide-content p{
+      margin-top: 20px;
+      font-size: 18px;
+    }
+    .welcome{
+      width: 80%;
+      height: 25px;
+      display: flex;
+      justify-content: center;
+      
+      background-color: rgba(156, 104, 7, 0.651);
+      text-align: center;
+      border-radius: 10px;
+      margin: 25% auto;
+      margin-bottom: 0;
+      margin-top: 5%;
+    }
+    .welcome h4{
+      font-size: 15px;
+      color: black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+  
+    }
+    .gl-buttons{
+      display: flex;
+      flex-direction: row;
+      margin: 5%;
+    }
+    
+    .g-button{
+      background-color: rgb(1, 1, 90);
+      color: #fff;
+      padding: 15px 30px;
+      border: 1px solid blue;
+      cursor: pointer;
+      border-radius: 10px;
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      align-items: center; 
+    }
+  
+    .l-button{
+      background-color: rgb(1, 1, 90);
+      color: #fff;
+      padding: 15px 30px;
+      border: 1px solid blue;
+      cursor: pointer;
+      border-radius: 10px;
+      margin-left: 10%; 
+      align-items: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  @media only screen and (min-width: 481px) and (max-width: 22048px){
+    .banner_main{
+      width: 100%;
+      height: 650px;
+      background-color: whitesmoke;
+      overflow: hidden;
+      position: relative;
+    
+    }
+    .custom-slider{
+      width: 100%;
+      height: 600px;
+    
+    
+    }
+    .carousel-item1{
+      background-image: url(../Images/a1.jfif);
+      width: 100%;
+      height: 460px;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .carousel-item2{
+      background-image: url(../Images/a1.jfif);
+      width: 100%;
+      height: 460px;
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+    .slide-content{
+     
+      color: whitesmoke;
+    }
+    
+    .slide-content h2{
+      font-size: 320%;
+      margin-top: 2%;
+    }
+    .slide-content p{
+      margin-top: 5%;
+      font-size: 180%;
+    }
+    .welcome{
+      width: 70%;
+      height: 20%;
+      background-color: rgba(156, 104, 7, 0.651);
+      text-align: center;
+      border-radius: 10px;
+      margin: 10% auto;
+      margin-bottom: 0;
+    }
+  
+    .gl-buttons{
+      width: 50%;
+      display: flex;
+      flex-direction: row;
+      margin: 0 auto;
+    }
+    
+    .g-button{
+      background-color: rgb(1, 1, 90);
+      color: #fff;
+      padding: 15px 30px;
+      border: 1px solid blue;
+      cursor: pointer;
+      border-radius: 10px;
+      margin-top: 20px;
+      margin: 20px;
+    }
+    .l-button{
+      background-color: rgb(1, 1, 90);
+      color: #fff;
+      padding: 15px 30px;
+      border: 1px solid blue;
+      cursor: pointer;
+      border-radius: 10px;
+      margin-top: 20px;
+      margin: 20px;
+    }
+  }
+  @media only screen and (min-width: 481px) and (max-width: 2028px) and (max-height: 990px){
+    .banner_main{
+      width: 100%;
+      height: 500px;
+      background-color: whitesmoke;
+      overflow: hidden;
+      position: relative;
+    
+    }
+    .custom-slider{
+      width: 100%;
+      height: 470px;
+    
+    
+    }
+    .carousel-item1{
+      background-image: url(../Images/a8.jfif);
+      width: 100%;
+      height: 460px;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+    }
+    .carousel-item2{
+      background-image: url(../Images/a7.jfif);
+      width: 100%;
+      height: 460px;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+    }
+    .slide-content{
+     
+      color: black;
+      padding-left: 5%;
+      font-weight: 700;
+    }
+    
+    .slide-content h2{
+      font-size: 40px;
+    }
+    .slide-content p{
+      margin-top: 20px;
+      font-size: 20px;
+    }
+    .welcome{
+      width: 80vh;
+      height: 25px;
+      background-color: orange;
+      text-align: center;
+      border-radius: 10px;
+      margin-top: 5%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .g-button{
+      background :linear-gradient(to right, green, orange);
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
+      margin-top: 20px;
+      margin: 20px;
+    }
+    .g-button:hover{
+      background :linear-gradient(to right, orange, green);
+      transform: translateY(-10px);
+      color: black;
+
+
+    }
+    .l-button{
+      background :linear-gradient(to right, green, orange);
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      border-radius: 10px;
+      margin-top: 20px;
+      margin: 20px;
+    }
+    .l-button:hover{
+      background :linear-gradient(to right, orange, green);
+      transform: translateY(-10px);
+      color: black;
+
+
+    }
+  }
+  
+
+
+
+
+  .Dairy-page {
+    width: 100%;
+    height: 1000px;
+    background-color: whitesmoke;
+  }
+  
+  .Dairy-page h1 {
+    font-size: 30px;
+    margin-left: 15vh;
+    padding-top: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .Dairy-vertical {
+    height: 15vh;
+    width: 2px;
+    background-color: orange;
+    position: absolute;
+    float: left;
+    margin-top: 40px;
+    margin-left: 14vh;
+  }
+  
+  .Dairy-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80%;
+    height: 700px;
+    margin: 0 auto;
+    margin-top: 15vh;
+    background-color: rgb(245, 243, 243);
+    box-shadow: 10px 10px 20px 20px rgb(198, 198, 252);
+  }
+  
+  .Dairy-item {
+    height: 30vh;
+    width: 30%;
+    margin: 10px;
+    margin: 0 auto;
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: black;
+    box-shadow: 8px 8px 10px 10px rgba(161, 197, 245, 0.7);
+  }
+  
+  .Dairy-item:hover {
+    background: linear-gradient(to right, rgb(1, 1, 90), #e7a33c);
+    transform: translateY(-20px);
+    color: white;
+  }
+  
+  .Dairy-item h3 {
+    margin-top: 20vh;
+    text-align: center;
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .Dairy-page {
+      width: 100%;
+      height: auto;
+      background-color: whitesmoke;
+    }
+  
+    .Dairy-page h1 {
+      font-size: 20px;
+      margin-left: 15%;
+      padding-top: 13%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  
+    .Dairy-vertical {
+      height: 9%;
+      width: 2px;
+      background-color: orange;
+      position: absolute;
+      float: left;
+      margin-top: 11%;
+      margin-left: 5vh;
+    }
+  
+    .Dairy-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 95%;
+      height: auto;
+      margin: 20% auto;
+      background-color: rgb(245, 243, 243);
+      box-shadow: 10px 10px 20px 20px rgb(198, 198, 252);
+    }
+  
+    .Dairy-item {
+      height: 20vh;
+      width: 30%;
+      margin: 3% auto;
+      border-radius: 10px;
+      transition: transform 0.3s, background-color 0.3s;
+      cursor: pointer;
+      background-color: whitesmoke;
+      color: black;
+      box-shadow: 8px 8px 10px 10px rgba(161, 197, 245, 0.7);
+    }
+  
+    .Dairy-item:hover {
+      background: linear-gradient(to right, rgb(1, 1, 90), #e7a33c);
+      transform: translateY(-20px);
+      color: white;
+    }
+  
+    .Dairy-item h3 {
+      margin-top: 50%;
+      text-align: center;
+      font-weight: 650;
+      font-size: 13px;
+    }
+  
+    .Dairy-item p {
+      display: none;
+    }
+  }
+  
+  @media only screen and (min-width: 481px) and (max-width: 2048px) {
+    .Dairy-page {
+      width: 100%;
+      height: auto;
+      background-color: whitesmoke;
+    }
+  
+    .Dairy-page h1 {
+      font-size: 60px;
+      margin-left: 15vh;
+      padding-top: 40px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  
+    .Dairy-page h1 span {
+      color: orange;
+    }
+  
+    .Dairy-vertical {
+      height: 15vh;
+      width: 3px;
+      background-color: orange;
+      position: absolute;
+      float: left;
+      margin-top: 5%;
+      margin-left: 14%;
+    }
+  
+    .Dairy-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 97%;
+      height: auto;
+      margin: 12% auto;
+      background-color: rgb(245, 243, 243);
+      box-shadow: 10px 10px 20px 20px rgb(198, 198, 252);
+    }
+  
+    .Dairy-item {
+      height: auto;
+      width: 30%;
+      margin: 3% auto;
+      border-radius: 10px;
+      transition: transform 0.3s, background-color 0.3s;
+      cursor: pointer;
+      background-color: whitesmoke;
+      color: black;
+      box-shadow: 8px 8px 10px 10px rgba(161, 197, 245, 0.7);
+    }
+  
+    .Dairy-item:hover {
+      background: linear-gradient(to right, rgb(1, 1, 90), #e7a33c);
+      transform: translateY(-20px);
+      color: white;
+    }
+  
+    .Dairy-item h3 {
+      margin-top: 40%;
+      margin-bottom: 30%;
+      text-align: center;
+      font-size: 30px;
+    }
+  }
+  
+  @media only screen and (min-width: 481px) and (max-width: 2048px) and (max-height: 990px) {
+    .Dairy-page {
+      width: 100%;
+      height: auto;
+      background-color: whitesmoke;
+    }
+  
+    .Dairy-page h1 {
+      font-size: 30px;
+      margin-left: 10%;
+      padding-top: 40px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  
+    .Dairy-vertical {
+      height: 15vh;
+      width: 2px;
+      background-color: orange;
+      position: absolute;
+      float: left;
+      margin-top: 40px;
+      margin-left: 8%;
+    }
+  
+    .Dairy-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 90%;
+      height: auto;
+      margin: 4% auto;
+      background-color: rgb(245, 243, 243);
+      box-shadow: 10px 10px 20px 20px rgb(198, 198, 252);
+    }
+  
+    .Dairy-item {
+      height: auto;
+      width: 30%;
+      margin: 10px;
+      margin: 1% auto;
+      border-radius: 10px;
+      transition: transform 0.3s, background-color 0.3s;
+      cursor: pointer;
+      background-color: whitesmoke;
+      color: black;
+      box-shadow: 8px 8px 10px 10px rgba(161, 197, 245, 0.7);
+    }
+  
+    .Dairy-item:hover {
+      background: linear-gradient(to right, rgb(1, 90, 1), #e7a33c);
+      transform: translateY(-20px);
+      color: white;
+    }
+  
+    .Dairy-item h3 {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 2%;
+      margin-top: 1%;
+    }
+    .m-img{
+      width: 100%;
+      border-radius: 10px;
+      height: 35vh;
+    }
+    .add-cart {
+      display: block;
+      margin: 20px auto;
+      padding: 10px 20px;
+      background-color: rgb(1, 90, 1);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+    
+    .add-cart:hover {
+      background-color: rgb(218, 145, 12);
+      transform: translateY(-5px);
+    }
+    .price{
+      text-align: center;
+      color: black;
+    }
+    .price:hover{
+      text-align: center;
+      color: white;
+    }
+  }
+  
+
+
+  .Fruits-page {
+    width: 100%;
+    height: 1000px;
+    background-color: whitesmoke;
+  }
+  
+  .Fruits-page h1 {
+    font-size: 30px;
+    margin-left: 15vh;
+    padding-top: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .Fruits-vertical {
+    height: 15vh;
+    width: 2px;
+    background-color: orange;
+    position: absolute;
+    float: left;
+    margin-top: 40px;
+    margin-left: 14vh;
+  }
+  
+  .Fruits-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80%;
+    height: 700px;
+    margin: 0 auto;
+    margin-top: 15vh;
+    background-color: rgb(245, 243, 243);
+    box-shadow: 10px 10px 20px 20px rgb(198, 198, 252);
+  }
+  
+  .Fruits-item {
+    height: 30vh;
+    width: 30%;
+    margin: 10px;
+    margin: 0 auto;
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: black;
+    box-shadow: 8px 8px 10px 10px rgba(161, 197, 245, 0.7);
+  }
+  
+  .Fruits-item:hover {
+    background: linear-gradient(to right, rgb(1, 1, 90), #e7a33c);
+    transform: translateY(-20px);
+    color: white;
+  }
+  
+  .Fruits-item h3 {
+    margin-top: 20vh;
+    text-align: center;
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .Fruits-page {
+      width: 100%;
+      height: auto;
+      background-color: whitesmoke;
+    }
+  
+    .Fruits-page h1 {
+      font-size: 20px;
+      margin-left: 15%;
+      padding-top: 13%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  
+    .Fruits-vertical {
+      height: 9%;
+      width: 2px;
+      background-color: orange;
+      position: absolute;
+      float: left;
+      margin-top: 11%;
+      margin-left: 5vh;
+    }
+  
+    .Fruits-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 95%;
+      height: auto;
+      margin: 20% auto;
+      background-color: rgb(245, 243, 243);
+      box-shadow: 10px 10px 20px 20px rgb(198, 198, 252);
+    }
+  
+    .Fruits-item {
+      height: 20vh;
+      width: 30%;
+      margin: 3% auto;
+      border-radius: 10px;
+      transition: transform 0.3s, background-color 0.3s;
+      cursor: pointer;
+      background-color: whitesmoke;
+      color: black;
+      box-shadow: 8px 8px 10px 10px rgba(161, 197, 245, 0.7);
+    }
+  
+    .Fruits-item:hover {
+      background: linear-gradient(to right, rgb(1, 1, 90), #e7a33c);
+      transform: translateY(-20px);
+      color: white;
+    }
+  
+    .Fruits-item h3 {
+      margin-top: 50%;
+      text-align: center;
+      font-weight: 650;
+      font-size: 13px;
+    }
+  
+    .Fruits-item p {
+      display: none;
+    }
+  }
+  
+  @media only screen and (min-width: 481px) and (max-width: 2048px) {
+    .Fruits-page {
+      width: 100%;
+      height: auto;
+      background-color: whitesmoke;
+    }
+  
+    .Fruits-page h1 {
+      font-size: 60px;
+      margin-left: 15vh;
+      padding-top: 40px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  
+    .Fruits-page h1 span {
+      color: orange;
+    }
+  
+    .Fruits-vertical {
+      height: 15vh;
+      width: 3px;
+      background-color: orange;
+      position: absolute;
+      float: left;
+      margin-top: 5%;
+      margin-left: 14%;
+    }
+  
+    .Fruits-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 97%;
+      height: auto;
+      margin: 12% auto;
+      background-color: rgb(245, 243, 243);
+      box-shadow: 10px 10px 20px 20px rgb(198, 198, 252);
+    }
+  
+    .Fruits-item {
+      height: auto;
+      width: 30%;
+      margin: 3% auto;
+      border-radius: 10px;
+      transition: transform 0.3s, background-color 0.3s;
+      cursor: pointer;
+      background-color: whitesmoke;
+      color: black;
+      box-shadow: 8px 8px 10px 10px rgba(161, 197, 245, 0.7);
+    }
+  
+    .Fruits-item:hover {
+      background: linear-gradient(to right, rgb(1, 1, 90), #e7a33c);
+      transform: translateY(-20px);
+      color: white;
+    }
+  
+    .Fruits-item h3 {
+      margin-top: 40%;
+      margin-bottom: 30%;
+      text-align: center;
+      font-size: 30px;
+    }
+  }
+  
+  @media only screen and (min-width: 481px) and (max-width: 2048px) and (max-height: 990px) {
+    .Fruits-page {
+      width: 100%;
+      height: auto;
+      background-color: whitesmoke;
+    }
+  
+    .Fruits-page h1 {
+      font-size: 30px;
+      margin-left: 10%;
+      padding-top: 40px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  
+    .Fruits-vertical {
+      height: 15vh;
+      width: 2px;
+      background-color: orange;
+      position: absolute;
+      float: left;
+      margin-top: 40px;
+      margin-left: 8%;
+    }
+  
+    .Fruits-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 90%;
+      height: auto;
+      margin: 4% auto;
+      background-color: rgb(245, 243, 243);
+      box-shadow: 10px 10px 20px 20px rgb(198, 198, 252);
+    }
+  
+    .Fruits-item {
+      height: auto;
+      width: 30%;
+      margin: 10px;
+      margin: 1% auto;
+      border-radius: 10px;
+      transition: transform 0.3s, background-color 0.3s;
+      cursor: pointer;
+      background-color: whitesmoke;
+      color: black;
+      box-shadow: 8px 8px 10px 10px rgba(161, 197, 245, 0.7);
+    }
+  
+    .Fruits-item:hover {
+      background: linear-gradient(to right, rgb(1, 1, 90), #e7a33c);
+      transform: translateY(-20px);
+      color: white;
+    }
+  
+    .Fruits-item h3 {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 2%;
+      margin-top: 1%;
+    }
+  }
+  
+  .m-img {
+    width: 100%;
+    border-radius: 10px;
+    height: 35vh;
+  }
+  
+  .add-cart {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: rgb(1, 90, 1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .add-cart:hover {
+    background-color: rgb(218, 145, 12);
+    transform: translateY(-5px);
+  }
+
+  .Vegetables-page {
+    width: 100%;
+    height: 1000px;
+    background-color: whitesmoke;
+  }
+  
+  .Vegetables-page h1 {
+    font-size: 30px;
+    margin-left: 15vh;
+    padding-top: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .Vegetables-vertical {
+    height: 15vh;
+    width: 2px;
+    background-color: green;
+    position: absolute;
+    float: left;
+    margin-top: 40px;
+    margin-left: 14vh;
+  }
+  
+  .Vegetables-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80%;
+    height: 700px;
+    margin: 0 auto;
+    margin-top: 15vh;
+    background-color: rgb(245, 243, 243);
+    box-shadow: 10px 10px 20px 20px rgb(198, 198, 252);
+  }
+  
+  .Vegetables-item {
+    height: 30vh;
+    width: 30%;
+    margin: 10px;
+    margin: 0 auto;
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: black;
+    box-shadow: 8px 8px 10px 10px rgba(161, 197, 245, 0.7);
+  }
+  
+  .Vegetables-item:hover {
+    background: linear-gradient(to right, rgb(1, 90, 1), #e7a33c);
+    transform: translateY(-20px);
+    color: white;
+  }
+  
+  .Vegetables-item h3 {
+    margin-top: 20vh;
+    text-align: center;
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .Vegetables-page {
+      width: 100%;
+      height: auto;
+      background-color: whitesmoke;
+    }
+  
+    .Vegetables-page h1 {
+      font-size: 20px;
+      margin-left: 15%;
+      padding-top: 13%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  
+    .Vegetables-vertical {
+      height: 9%;
+      width: 2px;
+      background-color: green;
+      position: absolute;
+      float: left;
+      margin-top: 11%;
+      margin-left: 5vh;
+    }
+  
+    .Vegetables-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 95%;
+      height: auto;
+      margin: 20% auto;
+      background-color: rgb(245, 243, 243);
+      box-shadow: 10px 10px 20px 20px rgb(198, 198, 252);
+    }
+  
+    .Vegetables-item {
+      height: 20vh;
+      width: 30%;
+      margin: 3% auto;
+      border-radius: 10px;
+      transition: transform 0.3s, background-color 0.3s;
+      cursor: pointer;
+      background-color: whitesmoke;
+      color: black;
+      box-shadow: 8px 8px 10px 10px rgba(161, 197, 245, 0.7);
+    }
+  
+    .Vegetables-item:hover {
+      background: linear-gradient(to right, rgb(1, 90, 1), #e7a33c);
+      transform: translateY(-20px);
+      color: white;
+    }
+  
+    .Vegetables-item h3 {
+      margin-top: 50%;
+      text-align: center;
+      font-weight: 650;
+      font-size: 13px;
+    }
+  
+    .Vegetables-item p {
+      display: none;
+    }
+  }
+  
+  @media only screen and (min-width: 481px) and (max-width: 2048px) {
+    .Vegetables-page {
+      width: 100%;
+      height: auto;
+      background-color: whitesmoke;
+    }
+  
+    .Vegetables-page h1 {
+      font-size: 60px;
+      margin-left: 15vh;
+      padding-top: 40px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  
+    .Vegetables-page h1 span {
+      color: green;
+    }
+  
+    .Vegetables-vertical {
+      height: 15vh;
+      width: 3px;
+      background-color: green;
+      position: absolute;
+      float: left;
+      margin-top: 5%;
+      margin-left: 14%;
+    }
+  
+    .Vegetables-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 97%;
+      height: auto;
+      margin: 12% auto;
+      background-color: rgb(245, 243, 243);
+      box-shadow: 10px 10px 20px 20px rgb(198, 198, 252);
+    }
+  
+    .Vegetables-item {
+      height: auto;
+      width: 30%;
+      margin: 3% auto;
+      border-radius: 10px;
+      transition: transform 0.3s, background-color 0.3s;
+      cursor: pointer;
+      background-color: whitesmoke;
+      color: black;
+      box-shadow: 8px 8px 10px 10px rgba(161, 197, 245, 0.7);
+    }
+  
+    .Vegetables-item:hover {
+      background: linear-gradient(to right, rgb(1, 90, 1), #e7a33c);
+      transform: translateY(-20px);
+      color: white;
+    }
+  
+    .Vegetables-item h3 {
+      margin-top: 40%;
+      margin-bottom: 30%;
+      text-align: center;
+      font-size: 30px;
+    }
+  }
+  
+  @media only screen and (min-width: 481px) and (max-width: 2048px) and (max-height: 990px) {
+    .Vegetables-page {
+      width: 100%;
+      height: auto;
+      background-color: whitesmoke;
+    }
+  
+    .Vegetables-page h1 {
+      font-size: 30px;
+      margin-left: 10%;
+      padding-top: 40px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  
+    .Vegetables-vertical {
+      height: 15vh;
+      width: 2px;
+      background-color: green;
+      position: absolute;
+      float: left;
+      margin-top: 40px;
+      margin-left: 8%;
+    }
+  
+    .Vegetables-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 90%;
+      height: auto;
+      margin: 4% auto;
+      background-color: rgb(245, 243, 243);
+      box-shadow: 10px 10px 20px 20px rgb(198, 198, 252);
+    }
+  
+    .Vegetables-item {
+      height: auto;
+      width: 30%;
+      margin: 10px;
+      margin: 1% auto;
+      border-radius: 10px;
+      transition: transform 0.3s, background-color 0.3s;
+      cursor: pointer;
+      background-color: whitesmoke;
+      color: black;
+      box-shadow: 8px 8px 10px 10px rgba(161, 197, 245, 0.7);
+    }
+  
+    .Vegetables-item:hover {
+      background: linear-gradient(to right, rgb(1, 90, 1), #e7a33c);
+      transform: translateY(-20px);
+      color: white;
+    }
+  
+    .Vegetables-item h3 {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 2%;
+      margin-top: 1%;
+    }
+  }
+  
+  .m-img {
+    width: 100%;
+    border-radius: 10px;
+    height: 35vh;
+  }
+  
+  .add-cart {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: rgb(1, 90, 1);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+  
+  .add-cart:hover {
+    background-color: rgb(218, 145, 12);
+    transform: translateY(-5px);
+  }
+  
+
+  .Poultry-page {
+    width: 100%;
+    height: 1000px;
+    background-color: whitesmoke;
+  }
+  
+  .Poultry-page h1 {
+    font-size: 30px;
+    margin-left: 15vh;
+    padding-top: 40px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+  
+  .Poultry-vertical {
+    height: 15vh;
+    width: 2px;
+    background-color: brown;
+    position: absolute;
+    float: left;
+    margin-top: 40px;
+    margin-left: 14vh;
+  }
+  
+  .Poultry-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 80%;
+    height: 700px;
+    margin: 0 auto;
+    margin-top: 15vh;
+    background-color: rgb(245, 243, 243);
+    box-shadow: 10px 10px 20px 20px rgb(198, 198, 252);
+  }
+  
+  .Poultry-item {
+    height: 30vh;
+    width: 30%;
+    margin: 10px;
+    margin: 0 auto;
+    border-radius: 10px;
+    transition: transform 0.3s, background-color 0.3s;
+    cursor: pointer;
+    background-color: whitesmoke;
+    color: black;
+    box-shadow: 8px 8px 10px 10px rgba(161, 197, 245, 0.7);
+  }
+  
+  .Poultry-item:hover {
+    background: linear-gradient(to right, rgb(139, 69, 19), #e7a33c);
+    transform: translateY(-20px);
+    color: white;
+  }
+  
+  .Poultry-item h3 {
+    margin-top: 20vh;
+    text-align: center;
+  }
+  
+  @media only screen and (max-width: 480px) {
+    .Poultry-page {
+      width: 100%;
+      height: auto;
+      background-color: whitesmoke;
+    }
+  
+    .Poultry-page h1 {
+      font-size: 20px;
+      margin-left: 15%;
+      padding-top: 13%;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  
+    .Poultry-vertical {
+      height: 9%;
+      width: 2px;
+      background-color: brown;
+      position: absolute;
+      float: left;
+      margin-top: 11%;
+      margin-left: 5vh;
+    }
+  
+    .Poultry-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 95%;
+      height: auto;
+      margin: 20% auto;
+      background-color: rgb(245, 243, 243);
+      box-shadow: 10px 10px 20px 20px rgb(198, 198, 252);
+    }
+  
+    .Poultry-item {
+      height: 20vh;
+      width: 30%;
+      margin: 3% auto;
+      border-radius: 10px;
+      transition: transform 0.3s, background-color 0.3s;
+      cursor: pointer;
+      background-color: whitesmoke;
+      color: black;
+      box-shadow: 8px 8px 10px 10px rgba(161, 197, 245, 0.7);
+    }
+  
+    .Poultry-item:hover {
+      background: linear-gradient(to right, rgb(139, 69, 19), #e7a33c);
+      transform: translateY(-20px);
+      color: white;
+    }
+  
+    .Poultry-item h3 {
+      margin-top: 50%;
+      text-align: center;
+      font-weight: 650;
+      font-size: 13px;
+    }
+  
+    .Poultry-item p {
+      display: none;
+    }
+  }
+  
+  @media only screen and (min-width: 481px) and (max-width: 2048px) {
+    .Poultry-page {
+      width: 100%;
+      height: auto;
+      background-color: whitesmoke;
+    }
+  
+    .Poultry-page h1 {
+      font-size: 60px;
+      margin-left: 15vh;
+      padding-top: 40px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  
+    .Poultry-page h1 span {
+      color: brown;
+    }
+  
+    .Poultry-vertical {
+      height: 15vh;
+      width: 3px;
+      background-color: brown;
+      position: absolute;
+      float: left;
+      margin-top: 5%;
+      margin-left: 14%;
+    }
+  
+    .Poultry-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 97%;
+      height: auto;
+      margin: 12% auto;
+      background-color: rgb(245, 243, 243);
+      box-shadow: 10px 10px 20px 20px rgb(198, 198, 252);
+    }
+  
+    .Poultry-item {
+      height: auto;
+      width: 30%;
+      margin: 3% auto;
+      border-radius: 10px;
+      transition: transform 0.3s, background-color 0.3s;
+      cursor: pointer;
+      background-color: whitesmoke;
+      color: black;
+      box-shadow: 8px 8px 10px 10px rgba(161, 197, 245, 0.7);
+    }
+  
+    .Poultry-item:hover {
+      background: linear-gradient(to right, rgb(139, 69, 19), #e7a33c);
+      transform: translateY(-20px);
+      color: white;
+    }
+  
+    .Poultry-item h3 {
+      margin-top: 40%;
+      margin-bottom: 30%;
+      text-align: center;
+      font-size: 30px;
+    }
+  }
+  
+  @media only screen and (min-width: 481px) and (max-width: 2048px) and (max-height: 990px) {
+    .Poultry-page {
+      width: 100%;
+      height: auto;
+      background-color: whitesmoke;
+    }
+  
+    .Poultry-page h1 {
+      font-size: 30px;
+      margin-left: 10%;
+      padding-top: 40px;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+  
+    .Poultry-vertical {
+      height: 15vh;
+      width: 2px;
+      background-color: brown;
+      position: absolute;
+      float: left;
+      margin-top: 40px;
+      margin-left: 8%;
+    }
+  
+    .Poultry-container {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      width: 90%;
+      height: auto;
+      margin: 4% auto;
+      background-color: rgb(245, 243, 243);
+      box-shadow: 10px 10px 20px 20px rgb(198, 198, 252);
+    }
+  
+    .Poultry-item {
+      height: auto;
+      width: 30%;
+      margin: 10px;
+      margin: 1% auto;
+      border-radius: 10px;
+      transition: transform 0.3s, background-color 0.3s;
+      cursor: pointer;
+      background-color: whitesmoke;
+      color: black;
+      box-shadow: 8px 8px 10px 10px rgba(161, 197, 245, 0.7);
+    }
+  
+    .Poultry-item:hover {
+      background: linear-gradient(to right, rgb(139, 69, 19), #e7a33c);
+      transform: translateY(-20px);
+      color: white;
+    }
+  
+    .Poultry-item h3 {
+      text-align: center;
+      font-size: 20px;
+      margin-bottom: 2%;
+      margin-top: 1%;
+    }
+  }
+  footer{
+    margin-top: auto;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  background: linear-gradient(to right, rgb(1, 90, 1), rgba(255, 136, 0, 0.966));
+
+  }
+  footer a{
+  text-decoration: none;
+
+  }
+  .dylan, .follow, .links{
+    width: 30%;
+    height: 400px;
+
+
+  }
+  .dylan h1, .follow h1, .links h1{
+    margin-top: 10vh;
+    text-align: center;
+  }
+  .dylan h3, .follow h3, .links h3{
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+
+
+  }
+  footer p{
+    text-align: center;
+    position: absolute;
+    margin-top:68vh;
+    color: white;
+  }
+  
+
+  
+
+  @media only screen and (max-width: 480px){
+    footer{
+      margin-top: auto;
+      width: 100%;
+      height: 450px;
+      display: flex;
+      flex-direction: row;
+  background: linear-gradient(to right, rgb(1, 90, 1), rgba(255, 136, 0, 0.966));
+  
+    }
+    footer a{
+    text-decoration: none;
+  
+    }
+    .dylan, .follow, .links{
+      width: 30%;
+      height: auto;
+      margin-top: 10%;
+      
+  
+  
+    }
+    .follow h1, .links h1{
+      margin-top: 2%;
+      text-align: center;
+      font-size: 20px;
+    }
+    .Wangilah{
+      margin-top: 0;
+      font-size: 20px;
+
+    }
+    .dylan h3, .follow h3{
+      margin-top: 20px;
+      text-align: center;
+      color: white;
+      font-size: 15px;
+      
+  
+  
+    }
+    .links-div h3{
+      color: white;
+      margin-right: 25px;
+      font-size: 80%;
+    }
+   
+    footer p{
+      text-align: center;
+      color: black;
+      font-weight: 700;
+      margin-top: 90%;
+    }
+    .Copyright{
+      width: 100%;
+      position: absolute;
+      margin-top: 43%;
+    }
+    .Copyright p{
+    color: black;
+    font-size: 13px;
+    }
+  }
+@media only screen and (min-width: 481px) and (max-width: 2048px){
+  footer{
+    margin-top: auto;
+    width: 100%;
+    height: 500px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  background: linear-gradient(to right, rgb(1, 90, 1), rgba(255, 136, 0, 0.966));
+
+  }
+  footer a{
+  text-decoration: none;
+
+  }
+  .dylan, .follow, .links{
+    width: 30%;
+    height: 400px;
+
+
+  }
+  .dylan h1, .follow h1, .links h1{
+    margin-top: 10vh;
+    text-align: center;
+  }
+  .dylan h3, .follow h3, .links h3{
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+
+
+  }
+  footer p{
+    text-align: center;
+    position: absolute;
+    color: black;
+    margin-top: 48%;
+    font-size:30px;
+    font-weight: bold;
+  }
+ 
+ 
+  
+}
+@media only screen and (min-width: 481px) and (max-width: 2048px) and (max-height: 990px){
+  footer{
+    margin-top: auto;
+    width: 100%;
+    height: auto;
+  background: linear-gradient(to right, rgb(1, 90, 1), rgba(255, 136, 0, 0.966));
+
+  }
+  footer a{
+  text-decoration: none;
+
+  }
+  .dylan, .follow, .links{
+    width: 30%;
+    height: 400px;
+
+
+  }
+  .dylan h1, .follow h1, .links h1{
+    margin-top: 10vh;
+    text-align: center;
+  }
+  .dylan h3, .follow h3, .links h3{
+    margin-top: 20px;
+    text-align: center;
+    color: white;
+    font-size: 13px;
+
+
+  }
+ 
+  .Copyright{
+    width: 100%;
+    position: absolute;
+    margin-top: 13%;
+  }
+  .Copyright p{
+  color: black;
+  font-size: 13px;
+  }
+ 
+}
+

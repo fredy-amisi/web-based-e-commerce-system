@@ -1,0 +1,81 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style: none;
+}
+.add-stylist-container {
+    display: flex;
+    flex-direction: column;
+    width: 100vh;
+    border-radius: 10px;
+    background-color: rgb(231, 225, 225);
+    margin-top: 2%;
+    margin-bottom: 2%;
+    float: right;
+    justify-content: center;
+    margin-left: 20vh;
+   box-shadow: 10px 10px 5px orange;
+
+}
+
+.add-stylist-container h2 {
+    text-align: center;
+}
+
+.add-stylist-container form {
+   display: flex;
+   flex-direction: column;
+   width: 70%;
+}
+
+
+
+#name,#category,#description,#image, #price{
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 4%;
+    font-size: 15px;
+    margin-left: 0;
+    border: 1px solid #ccc;
+    margin: 5% auto;
+}
+#name,#category,#description,#image, #price:focus{
+    border-color: green;
+    box-shadow: 0 0 5px rgb(121, 241, 121);
+    outline: none;
+}
+
+#file{
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 4%;
+    font-size: 15px;
+    margin-left: 0;
+    border: 1px solid #ccc;
+
+
+}
+
+
+
+
+#submit{
+    background :linear-gradient(to right, green, orange);
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    margin-top: 20px;
+    margin: 20px;
+
+}
+#submit:hover{
+    background :linear-gradient(to right, orange, green);
+    transform: translateY(-10px);
+    color: black;
+
+}

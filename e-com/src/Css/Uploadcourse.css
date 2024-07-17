@@ -1,0 +1,47 @@
+.submit-container{
+    width: 70%;
+    height: auto;
+    box-shadow: 10px 10px 20px 20px rgb(213, 176, 236);
+    border-radius: 10px;
+    margin: 1% auto;
+}
+.submit-container h2{
+    text-align: center;
+
+}
+input[type="text"]{
+    width: 80%;
+    padding: 10px;
+    margin: 2%;
+    border-radius: 10px;
+
+
+}
+.textarea{
+    width: 80%;
+    padding: 10px;
+    margin: 2%;
+    border-radius: 10px;
+
+
+}
+input[type="file"]{
+    width: 80%;
+    padding: 10px;
+    margin: 2%;
+    border-radius: 10px;
+
+
+}
+.submit{
+    width: 20%;
+    padding: 10px;
+    margin: 2% auto;
+    border-radius: 10px;
+  background: linear-gradient(to right, rgba(255, 70, 70, 0.822), rgb(1, 25, 90));
+  border: none;
+  cursor: pointer;
+
+
+
+}
