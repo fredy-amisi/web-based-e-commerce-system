@@ -1,27 +1,35 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import '../Css/MpesaPopup.css';
 
-const MpesaPopup = ({ onClose, inputs }) => {
-  const [amount, setAmount] = useState('');
+const MpesaPopup = ({ onClose, amount, orders }) => {
   const [phoneNumber, setPhoneNumber] = useState('');
 
+  useEffect(() => {
+    // Initialize any data if needed
+  }, [amount]);
+
   const handleSend = async () => {
+    if (!phoneNumber) {
+      alert('Phone number is missing');
+      return;
+    }
+
     try {
-      const response = await axios.post('http://localhost/sydney/initiatePayment.php', {
+      const response = await axios.post('http://localhost/sydney/storeCartData.php', {
         amount: amount,
         phoneNumber: phoneNumber,
+        orders: orders
       }, {
         headers: {
           'Content-Type': 'application/json'
         }
       });
-  
+
       const result = response.data;
       console.log('Response from server:', result);
-      if (result.ResponseCode === '0') {
-        alert('Please complete the payment on your phone');
-        
+      if (result.success) {
+        alert('Payment initiation was successful. ');
       } else {
         alert('Payment initiation failed. Please try again.');
       }
@@ -31,7 +39,7 @@ const MpesaPopup = ({ onClose, inputs }) => {
     }
     onClose();
   };
-  
+
   return (
     <div className="popup">
       <div className="popup-inner">
@@ -44,9 +52,8 @@ const MpesaPopup = ({ onClose, inputs }) => {
             type="number"
             id="amount"
             value={amount}
-            onChange={(e) => setAmount(e.target.value)}
-            placeholder="Enter Amount To Pay"
-            required
+            readOnly
+            placeholder="Amount To Pay"
           />
         </div>
         <div className="input-container">

@@ -23,18 +23,7 @@ const Navbar = ({ cart }) => {
         </div>
         <ul className={isMenuOpen ? "nav-links show" : "nav-links"}>
           <li><Link to="/Index" ><span>HOME</span></Link></li>
-          <li><Link to="/About" ><span>ABOUT</span></Link></li>
-          <li className="dropdown">
-            <span>SERVICES</span>
-            <ul className="dropdown-content">
-              <li><Link to="/Fruits">FRUITS </Link></li>
-              <li><Link to="/Vegetables">VEGETABLES</Link></li>
-              <li><Link to="/Poultry">POULTRY</Link></li>
-              <li><Link to="/Admin">MEAT</Link></li>
-              <li><Link to="/Dairy">DAIRY</Link></li>
-            </ul>
-          </li>
-          <li><Link to="/Contact" ><span>CONTACT</span></Link></li>
+        
           <li><Link to="/Login" ><span>LOGIN</span></Link></li>
           
           <li><Link to="/Signup" ><span>SIGNUP</span></Link></li>

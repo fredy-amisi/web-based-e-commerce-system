@@ -12,7 +12,7 @@ const AdminDashboard = () => {
         <div className="admin_dashboard">
             <nav id="nav">
                 <div className="adm_cont">
-                    <h1>Admin_name</h1> 
+                    <h1>Welcome Sysy</h1> 
                     <div className="oval"></div>
                     <img className="t1" src="" alt="adm"/> 
                 </div>

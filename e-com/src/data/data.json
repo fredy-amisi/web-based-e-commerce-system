@@ -1,0 +1,159 @@
+{
+  "Header": {
+    "title": "Crime Investigation System",
+    "paragraph": "Ensuring justice and safety through efficient crime reporting and investigation."
+  },
+  "About": {
+    "paragraph": "Our Crime Investigation System is dedicated to providing a secure and efficient platform for reporting and investigating crimes. Our mission is to ensure justice and safety for all through timely and thorough investigations.",
+    "Why": [
+      "Efficient Crime Reporting",
+      "Secure Data Handling",
+      "Timely Investigations",
+      "Comprehensive Crime Analysis"
+    ],
+    "Why2": [
+      "User-Friendly Interface",
+      "Dedicated Support Team",
+      "Anonymous Reporting Options",
+      "Collaborative Investigation Tools"
+    ]
+  },
+  "Gallery": [
+    {
+      "title": "Crime Scene Investigation",
+      "largeImage": "img/portfolio/crime-scene-large.jpg",
+      "smallImage": "img/portfolio/crime-scene-small.jpg"
+    },
+    {
+      "title": "Forensic Analysis",
+      "largeImage": "img/portfolio/forensic-analysis-large.jpg",
+      "smallImage": "img/portfolio/forensic-analysis-small.jpg"
+    },
+    {
+      "title": "Suspect Identification",
+      "largeImage": "img/portfolio/suspect-identification-large.jpg",
+      "smallImage": "img/portfolio/suspect-identification-small.jpg"
+    },
+    {
+      "title": "Evidence Collection",
+      "largeImage": "img/portfolio/evidence-collection-large.jpg",
+      "smallImage": "img/portfolio/evidence-collection-small.jpg"
+    },
+    {
+      "title": "Crime Data Analysis",
+      "largeImage": "img/portfolio/data-analysis-large.jpg",
+      "smallImage": "img/portfolio/data-analysis-small.jpg"
+    },
+    {
+      "title": "Community Outreach",
+      "largeImage": "img/portfolio/community-outreach-large.jpg",
+      "smallImage": "img/portfolio/community-outreach-small.jpg"
+    }
+  ],
+  "Services": [
+    {
+      "icon": "fa fa-search",
+      "name": "Crime Investigation",
+      "text": "Our team conducts thorough investigations to ensure justice is served."
+    },
+    {
+      "icon": "fa fa-file",
+      "name": "Report Management",
+      "text": "Efficiently manage and track crime reports with our advanced system."
+    },
+    {
+      "icon": "fa fa-users",
+      "name": "Community Support",
+      "text": "We work closely with communities to improve safety and trust."
+    },
+    {
+      "icon": "fa fa-shield",
+      "name": "Law Enforcement Collaboration",
+      "text": "Collaborate with law enforcement agencies for comprehensive crime handling."
+    },
+    {
+      "icon": "fa fa-laptop",
+      "name": "Data Analysis",
+      "text": "Utilize data analysis to identify crime patterns and prevent future incidents."
+    },
+    {
+      "icon": "fa fa-phone",
+      "name": "24/7 Support",
+      "text": "Our support team is available around the clock to assist with any inquiries."
+    }
+  ],
+  "Testimonials": [
+    {
+      "img": "img/testimonials/1.jpg",
+      "text": "\"The Crime Investigation System has revolutionized how we report and investigate crimes. The efficiency and thoroughness of their team are unmatched.\"",
+      "name": "Fred Amisi"
+    },
+    {
+      "img": "img/testimonials/2.jpg",
+      "text": "\"Thanks to the anonymous reporting feature, we can report crimes without fear of retaliation. This system has made our community safer.\"",
+      "name": "Esther Mwongeli"
+    },
+    {
+      "img": "img/testimonials/3.jpg",
+      "text": "\"The data analysis tools provided by the Crime Investigation System have been invaluable in identifying crime patterns in our area.\"",
+      "name": "Winnie Otolo"
+    },
+    {
+      "img": "img/testimonials/4.jpg",
+      "text": "\"Their collaborative approach with law enforcement ensures that every case is handled with the utmost professionalism.\"",
+      "name": "Abdalla Hamara"
+    }
+  ],
+  "Team": [
+    {
+      "img": "/img/team/1.jpg",
+      "name": "Detective Abigael Mrembo",
+      "job": "Lead Investigator"
+    },
+    {
+      "img": "img/team/2.jpg",
+      "name": "Forensic Esther Mwongeli",
+      "job": "Forensic Analyst"
+    },
+    {
+      "img": "img/team/3.jpg",
+      "name": "Officer Winnie",
+      "job": "Field Officer"
+    },
+    {
+      "img": "img/team/4.jpg",
+      "name": "Analyst Abdalla",
+      "job": "Data Analyst"
+    }
+  ],
+  "Contact": {
+    "address": "Mombasa Lenya",
+    "phone": "+254 112173148",
+    "email": "support@crimeinvestigationsystem.com",
+    "facebook": "facebook.com/crimeinvestigationsystem",
+    "twitter": "twitter.com/crimeinvestsys",
+    "youtube": "youtube.com/crimeinvestigationsystem"
+  },
+  "Features": [
+    {
+      "icon": "fa fa-search",
+      "title": "Detailed Investigations",
+      "text": "Conduct thorough investigations with our comprehensive tools and resources."
+    },
+    {
+      "icon": "fa fa-shield",
+      "title": "Secure Reporting",
+      "text": "Report crimes securely and anonymously to protect your identity."
+    },
+    {
+      "icon": "fa fa-database",
+      "title": "Data Analysis",
+      "text": "Leverage data analysis to identify trends and prevent future crimes."
+    },
+    {
+      "icon": "fa fa-users",
+      "title": "Community Collaboration",
+      "text": "Work with local communities to improve safety and prevent crime."
+    }
+  ]
+}

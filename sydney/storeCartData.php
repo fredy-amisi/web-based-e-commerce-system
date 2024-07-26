@@ -17,40 +17,40 @@ $conn = $dbConnect->conn;
 $data = json_decode(file_get_contents('php://input'), true);
 
 // Validate and sanitize data (optional)
-
-// Extract necessary data from the orders array
-$orders = $data['orders']; // Assuming 'orders' is sent as an array of objects
-$totalAmount = $data['total']; // Total amount to be stored (optional)
+$amount = $data['amount'];
+$phoneNumber = $data['phoneNumber'];
+$orders = $data['orders'];
 
 $response = array();
 
 // Example SQL query to insert order data into the database
-$sql = "INSERT INTO orders ( product, quantity, total_price, order_date, status) VALUES (:product, :quantity, :total_price, NOW(), 'pending')";
+$sql = "INSERT INTO orders (product, quantity, total_price, order_date, phone_number) VALUES (:product, :quantity, :total_price, NOW(), :phone_number)";
 
 try {
-    // Prepare the SQL statement
-    $stmt = $conn->prepare($sql);
+  // Prepare the SQL statement
+  $stmt = $conn->prepare($sql);
 
-    // Bind parameters and execute for each order
-    foreach ($orders as $order) {
-        $stmt->bindParam(':product', $order['product']);
-        $stmt->bindParam(':quantity', $order['quantity']);
-        $stmt->bindParam(':total_price', $order['total_price']);
+  // Bind parameters and execute for each order
+  foreach ($orders as $order) {
+    $stmt->bindParam(':product', $order['product']);
+    $stmt->bindParam(':quantity', $order['quantity']);
+    $stmt->bindParam(':total_price', $order['total_price']);
+    $stmt->bindParam(':phone_number', $phoneNumber);
 
-        // Execute the statement
-        if (!$stmt->execute()) {
-            throw new Exception("Failed to insert order: " . $stmt->errorInfo()[2]);
-        }
+    // Execute the statement
+    if (!$stmt->execute()) {
+      throw new Exception("Failed to insert order: " . $stmt->errorInfo()[2]);
     }
+  }
 
-    // If all orders are inserted successfully
-    $response['success'] = true;
-    $response['message'] = 'Orders stored successfully.';
-    echo json_encode($response);
+  // If all orders are inserted successfully
+  $response['success'] = true;
+  $response['message'] = 'Orders stored successfully.';
+  echo json_encode($response);
 } catch (Exception $e) {
-    // If an error occurs
-    $response['success'] = false;
-    $response['message'] = 'Failed to store orders in the database: ' . $e->getMessage();
-    echo json_encode($response);
+  // If an error occurs
+  $response['success'] = false;
+  $response['message'] = 'Failed to store orders in the database: ' . $e->getMessage();
+  echo json_encode($response);
 }
 ?>

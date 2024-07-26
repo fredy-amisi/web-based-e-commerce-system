@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import ReactDOM from 'react-dom/client';
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
 import './index.css';
@@ -14,11 +14,16 @@ import Signup from './Pages/Signup;';
 import Login from './Pages/Login;';
 import AdminDashboard from './Pages/AdminDashboard ';
 import MpesaPopup from './Pages/MpesaPopup';
+import About from './Pages/About';
+import FarmersDashboard from './Pages/FarmersDashboard';
 
 
 export default function App(){
 
   const [cart, setCart] = useState([]);
+  
+    
+  
   return(
 
     <BrowserRouter>
@@ -26,8 +31,9 @@ export default function App(){
     <Routes>
     <Route path="/" element={<Index />} />
     <Route path="/Index" element={<Index />} />
+    <Route path="/Fruits" element={<Fruits cart={cart} setCart={setCart}/>} />
     <Route path="/Fruits" element={<Fruits/>} />
-    <Route path="/Fruits" element={<Fruits/>} />
+    <Route path="/About" element={<About/>} />
     <Route path="/Vegetables" element={<Vegetables/>} />
     <Route path="/Dairy" element={<Dairy cart={cart} setCart={setCart}/>} />
     <Route path="/Poultry" element={<Poultry cart={cart} setCart={setCart}/>} />
@@ -36,6 +42,7 @@ export default function App(){
     <Route path="/MpesaPopup" element={<MpesaPopup/>} />
     <Route path="/Login" element={<Login/>} />
     <Route path="/AdminDashboard/*" element={<AdminDashboard/>} />
+    <Route path="/FarmersDashboard/*" element={<FarmersDashboard/>} />
 
     </Routes>
     <Footer/>

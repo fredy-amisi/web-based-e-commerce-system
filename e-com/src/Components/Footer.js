@@ -1,6 +1,7 @@
   import React from 'react';
 
   const Footer = () => {
+    const currentYear = new Date().getFullYear();
     return (
       <>
       <footer>
@@ -8,7 +9,9 @@
           <h1 className="Wangilah">Fresh agricultural products online, connecting farms to consumers.</h1>
         </div>
         <div className="Copyright">
-        <p className="Copyright">@Copyright - All Rights Reserved. Designed by Dylan <br/> 0113918190</p>
+        <p className="Copyright">
+          &copy; {currentYear} - All Rights Reserved. Designed by Shirley Sydney <br /> +254 742534185
+        </p>
         </div>
         <div className="follow">
           <h1>Follow us</h1>

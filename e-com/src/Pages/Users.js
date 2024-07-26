@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import { Link } from "react-router-dom";
-import "../Css/Users.css"
+import "../Css/Users.css";
 
 const Admin = () => {
     const [users, setUsers] = useState([]);
@@ -21,10 +20,25 @@ const Admin = () => {
             });
     }
 
+    const printReport = () => {
+        const printWindow = window.open('', '', 'height=600,width=800');
+        printWindow.document.write('<html><head><title>Print Report</title>');
+        printWindow.document.write('<link rel="stylesheet" href="/path/to/your/Users.css">'); // Ensure this path is correct
+        printWindow.document.write('</head><body >');
+        printWindow.document.write(document.querySelector('.users').innerHTML);
+        printWindow.document.write('</body></html>');
+        printWindow.document.close();
+        printWindow.focus();
+        printWindow.print();
+    };
+
     return (
         <>
             <div className="users">
                 <h1>Users</h1>
+                <button onClick={printReport} className="print-button">
+                    Print Report
+                </button>
                 <table className="table">
                     <thead className="t-head">
                         <tr className="table-r">
@@ -34,8 +48,7 @@ const Admin = () => {
                             <th className="th">Username</th>
                             <th className="th">ROLE</th>
                             <th className="th">Phone Number</th>
-                            <th className="th">Creatted At</th>
-                            <th className="th">Actions</th>
+                            <th className="th">Created At</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,17 +61,13 @@ const Admin = () => {
                                 <td>{user.role}</td>
                                 <td>{user.phonenumber}</td>
                                 <td>{user.signin_date}</td>
-                                <td>
-                                    <Link to={`user/${user.id}/edit`}>Edit</Link>
-                                    <button>Delete</button>
-                                </td>
                             </tr>
                         )}
                     </tbody>
                 </table>
             </div>
         </>
-    )
+    );
 }
 
 export default Admin;

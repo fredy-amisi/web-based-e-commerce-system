@@ -1,18 +1,22 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import PropTypes from 'prop-types';
 import "../Css/styling.css";
 import Scrollbutton from "../Components/Scrollbutton";
+import Fruits from "./Fruits";
+import { toast } from 'react-toastify'; 
 
 const Dairy = ({ cart, setCart }) => {
+  console.log('Cart:', cart);
+
   const [dairyProducts, setDairyProducts] = useState([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchDairyProducts = async () => {
       try {
-        // Fetch dairy products from the backend
         const response = await axios.get("http://localhost/sydney/fetchDairyProducts.php");
-        console.log(response.data); // Debugging: Log the response data
+        console.log(response.data);
 
         if (Array.isArray(response.data)) {
           setDairyProducts(response.data);
@@ -31,7 +35,7 @@ const Dairy = ({ cart, setCart }) => {
   }, []);
 
   const addToCart = (product) => {
-    const existingProductIndex = cart.findIndex((item) => item.id === product.id);
+    const existingProductIndex = cart.findIndex(item => item.id === product.id);
     if (existingProductIndex !== -1) {
       const newCart = [...cart];
       newCart[existingProductIndex].quantity += 1;
@@ -39,6 +43,9 @@ const Dairy = ({ cart, setCart }) => {
     } else {
       setCart([...cart, { ...product, quantity: 1 }]);
     }
+    
+    // Notify user
+    toast.success(`${product.name} added to cart!`);
   };
 
   return (
@@ -76,8 +83,18 @@ const Dairy = ({ cart, setCart }) => {
         )}
       </div>
       <Scrollbutton />
+      <Fruits cart={cart} setCart={setCart} />
     </div>
   );
+};
+
+Dairy.propTypes = {
+  cart: PropTypes.array.isRequired,
+  setCart: PropTypes.func.isRequired,
+};
+
+Dairy.defaultProps = {
+  cart: [],
 };
 
 export default Dairy;

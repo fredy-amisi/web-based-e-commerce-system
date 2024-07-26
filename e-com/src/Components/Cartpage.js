@@ -5,6 +5,7 @@ import MpesaPopup from "../Pages/MpesaPopup";
 
 const Cartpage = ({ cart, setCart }) => {
   const [showMpesaPopup, setShowMpesaPopup] = useState(false);
+  const [orderData, setOrderData] = useState(null);
 
   const addItem = (index) => {
     const newCart = [...cart];
@@ -28,31 +29,19 @@ const Cartpage = ({ cart, setCart }) => {
 
   const handleBuy = async () => {
     try {
-      // Extracting necessary data: product name, quantity, and total price
       const orderData = cart.map(item => ({
         product: item.name,
         quantity: item.quantity,
         total_price: item.price * item.quantity
       }));
+      
+      // Store the order data temporarily
+      setOrderData(orderData);
+      setShowMpesaPopup(true);
 
-      // Step 1: Send extracted order data to the database
-      const response = await axios.post('http://localhost/sydney/storeCartData.php', {
-        orders: orderData, // Sending orders array to backend
-        total: getTotalPrice()
-      });
-
-      const result = response.data;
-      console.log('Response from server:', result);
-
-      if (result.success) {
-        // Step 2: Show Mpesa popup if storing order data is successful
-        setShowMpesaPopup(true);
-      } else {
-        alert('Failed to store order data in the database. Please try again.');
-      }
     } catch (error) {
-      console.error('Error storing order data:', error);
-      alert('An error occurred while storing order data. Please try again.');
+      console.error('Error preparing order data:', error);
+      alert('An error occurred while preparing order data. Please try again.');
     }
   };
 
@@ -101,7 +90,7 @@ const Cartpage = ({ cart, setCart }) => {
         </>
       )}
       {showMpesaPopup && (
-        <MpesaPopup onClose={closeMpesaPopup} inputs={cart} />
+        <MpesaPopup onClose={closeMpesaPopup} amount={getTotalPrice()} orders={orderData} />
       )}
     </div>
   );

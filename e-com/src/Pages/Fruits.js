@@ -1,88 +1,100 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import PropTypes from 'prop-types';
 import "../Css/styling.css";
 import Scrollbutton from "../Components/Scrollbutton";
-import "../Css/ScrollAnimation.css";
-import ScrollAnimation from "../Components/ScrollAnimation ";
-import apple from '../Images/apple.jpeg';
-import banana from '../Images/banana.jpeg';
-import orange from '../Images/orange.jpeg';
-import grape from '../Images/grape.jpeg';
-import mango from '../Images/mango.jpeg';
-import strawberry from '../Images/strawberry.jpeg';
-import watermelon from '../Images/watermelon.jpeg';
-import pineapple from '../Images/pineapple.jpeg';
-import kiwi from '../Images/kiwi.jpeg';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
-const Fruits = () => {
-  const { ref, isVisible } = ScrollAnimation();
+const Fruits = ({ cart, setCart }) => {
+  console.log('Cart:', cart);
+
+  const [fruitProducts, setFruitProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchFruitProducts = async () => {
+      try {
+        const response = await axios.get("http://localhost/sydney/fetchFruitProducts.php");
+        console.log(response.data);
+
+        if (Array.isArray(response.data)) {
+          setFruitProducts(response.data);
+        } else {
+          console.error("Response data is not an array:", response.data);
+        }
+
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching fruit products:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchFruitProducts();
+  }, []);
+
+  const addToCart = (product) => {
+    const existingProductIndex = cart.findIndex(item => item.id === product.id);
+    if (existingProductIndex !== -1) {
+      const newCart = [...cart];
+      newCart[existingProductIndex].quantity += 1;
+      setCart(newCart);
+    } else {
+      setCart([...cart, { ...product, quantity: 1 }]);
+    }
+    
+    // Notify user
+    toast.success(`${product.name} added to cart!`);
+  };
 
   return (
     <div>
       <div className="Fruits-page">
-        <div className={`scroll-animation ${isVisible ? 'isVisible' : ''}`} ref={ref}>
+        <div className="scroll-animation isVisible">
           <div className="Fruits-vertical"></div>
-          <h1>DISCOVER OUR <span>FRESH</span> <br/>FRUITS <span>SELECTION</span></h1>
+          <h1>
+            DISCOVER OUR <span>FRESH</span> <br />
+            FRUIT <span>PRODUCTS</span>
+          </h1>
         </div>
-        <div className="Fruits-container">
-          <div className="Fruits-item">
-            <img className="m-img" src={apple} alt="apple" />
-            <h3>APPLES</h3>
-            <p>Enjoy the crisp and juicy taste of our fresh apples, sourced from local orchards.</p>
-            <button className="add-cart">Add To Cart</button>
+        {loading ? (
+          <p>Loading...</p>
+        ) : fruitProducts.length === 0 ? (
+          <p>No fruit products currently available.</p>
+        ) : (
+          <div className="Fruits-container">
+            {fruitProducts.map((product) => (
+              <div className="Fruits-item" key={product.id}>
+                <img
+                  className="m-img"
+                  src={`http://localhost/sydney/${product.image_path}`}
+                  alt={product.name}
+                />
+                <h3>{product.name}</h3>
+                <p>{product.description}</p>
+                <p className="price">Price: KSH {product.price}</p>
+                <button className="add-cart" onClick={() => addToCart(product)}>
+                  Add To Cart
+                </button>
+              </div>
+            ))}
           </div>
-          <div className="Fruits-item">
-            <img className="m-img" src={banana} alt="banana" />
-            <h3>BANANAS</h3>
-            <p>Relish the sweet and creamy flavor of our ripe bananas, perfect for a healthy snack.</p>
-            <button className="add-cart">Add To Cart</button>
-          </div>
-          <div className="Fruits-item">
-            <img className="m-img" src={orange} alt="orange" />
-            <h3>ORANGES</h3>
-            <p>Enjoy the tangy and refreshing taste of our fresh oranges, full of vitamin C.</p>
-            <button className="add-cart">Add To Cart</button>
-          </div>
-          <div className="Fruits-item">
-            <img className="m-img" src={grape} alt="grape" />
-            <h3>GRAPES</h3>
-            <p>Savor the sweet and juicy taste of our fresh grapes, perfect for snacking or adding to salads.</p>
-            <button className="add-cart">Add To Cart</button>
-          </div>
-          <div className="Fruits-item">
-            <img className="m-img" src={mango} alt="mango" />
-            <h3>MANGOES</h3>
-            <p>Indulge in the rich and sweet flavor of our fresh mangoes, a tropical delight.</p>
-            <button className="add-cart">Add To Cart</button>
-          </div>
-          <div className="Fruits-item">
-            <img className="m-img" src={strawberry} alt="strawberry" />
-            <h3>STRAWBERRIES</h3>
-            <p>Enjoy the sweet and tangy taste of our fresh strawberries, perfect for desserts or snacking.</p>
-            <button className="add-cart">Add To Cart</button>
-          </div>
-          <div className="Fruits-item">
-            <img className="m-img" src={watermelon} alt="watermelon" />
-            <h3>WATERMELON</h3>
-            <p>Stay refreshed with our juicy and sweet watermelons, perfect for hot days.</p>
-            <button className="add-cart">Add To Cart</button>
-          </div>
-          <div className="Fruits-item">
-            <img className="m-img" src={pineapple} alt="pineapple" />
-            <h3>PINEAPPLE</h3>
-            <p>Enjoy the tropical and tangy flavor of our fresh pineapples, perfect for smoothies or snacking.</p>
-            <button className="add-cart">Add To Cart</button>
-          </div>
-          <div className="Fruits-item">
-            <img className="m-img" src={kiwi} alt="kiwi" />
-            <h3>KIWI</h3>
-            <p>Savor the unique and tangy taste of our fresh kiwis, packed with nutrients and flavor.</p>
-            <button className="add-cart">Add To Cart</button>
-          </div>
-        </div>
+        )}
       </div>
       <Scrollbutton />
+      <ToastContainer />
     </div>
   );
+};
+
+Fruits.propTypes = {
+  cart: PropTypes.array.isRequired,
+  setCart: PropTypes.func.isRequired,
+};
+
+Fruits.defaultProps = {
+  cart: [],
 };
 
 export default Fruits;

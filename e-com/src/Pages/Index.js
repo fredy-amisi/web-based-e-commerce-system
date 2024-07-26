@@ -5,10 +5,7 @@ import '../Css/styling.css'
 import Slider from 'react-slick';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Dairy from "./Dairy";
-import Fruits from "./Fruits";
-import Vegetables from "./Vegetables";
-import Poultry from "./Poultry";
+import About from "../Pages/About";
 
 const Index = () => {
     const navigate = useNavigate();
@@ -84,10 +81,7 @@ const Index = () => {
                     ))}
                 </Slider>
             </section>
-            <Dairy/>
-            <Fruits/>
-            <Vegetables/>
-            <Poultry/>
+           <About/>
 
         </div>
 

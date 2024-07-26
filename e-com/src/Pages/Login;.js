@@ -9,7 +9,6 @@ const Login = () => {
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
-    // Update state based on input name
     switch (name) {
       case "username":
         setUsername(value);
@@ -18,7 +17,7 @@ const Login = () => {
         setPassword(value);
         break;
       default:
-      // Handle unexpected input names (optional)
+        break;
     }
   };
 
@@ -32,18 +31,21 @@ const Login = () => {
       });
 
       if (response.data.success) {
-        // Check if the logged-in user is an admin
+        // Check the role of the logged-in user
         if (response.data.role === "admin") {
-          // Redirect to admin dashboard
+          // Redirect to Admin Dashboard
           window.location.href = "/AdminDashboard";
+        } else if (response.data.role === "farmer") {
+          // Redirect to Farmers component
+          window.location.href = "/FarmersDashboard";
         } else {
           // Normal user login
           alert("You have successfully logged in.");
-          window.location.href = "/Courses";
+          window.location.href = "/Dairy";
         }
       } else {
         // Login failed, display specific error message
-        alert(response.data.error); // Adjust according to your backend response structure
+        alert(response.data.error);
       }
     } catch (error) {
       console.error(error);
@@ -54,7 +56,7 @@ const Login = () => {
   return (
     <div>
       <div className="login-section">
-        <h3>E-Attendance SERVICES</h3>
+        <h3>E-commerce System</h3>
         <p>Sign in to your account</p>
         <form onSubmit={handleSubmit}>
           <label htmlFor="username">
@@ -88,9 +90,9 @@ const Login = () => {
             <p>Forgot Your Password?</p>
           </div>
           <button 
-          className="login_button" 
-          type="submit"
-          id="login_button">
+            className="login_button" 
+            type="submit" 
+            id="login_button">
             <span>Login</span>
           </button>
           <p className="dont-p">
